@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles'; 
-import ArrowForward from '@material-ui/icons/ArrowForward';
+// import ArrowForward from '@material-ui/icons/ArrowForward';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import Card from '@material-ui/core/Card'
 
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         color: 'white',
         background: 'rgba(0,0,0, .2)',
         '&:hover': {
-            fontSize: '1rem',
+            // fontSize: '1rem',
             background: 'rgba(255, 255, 255, 0.1)'
         }
     },
