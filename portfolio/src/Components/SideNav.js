@@ -49,24 +49,33 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  header: {
+    display: 'flex',
+    flexFlow: 'column wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 }));
 
 
 
 
 const SideNav = () => {
-    const classes = useStyles();
-    const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+  const classes = useStyles();
+  const theme = useTheme();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   
-    function handleDrawerToggle() {
-      setMobileOpen(!mobileOpen);
-    }
+  function handleDrawerToggle() {
+    setMobileOpen(!mobileOpen);
+  }
   
-    const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider />
+  const drawer = (
+    <div>
+      <div className={classes.header}>
+        <h1>Daniel Martin</h1>
+        <p>Software Engineer</p>
+      </div>
+      <Divider />
         <List>
           {['About', 'Projects', 'Contact', 'Resume'].map((text, index) => (
             <ListItem button key={text}>
@@ -75,13 +84,14 @@ const SideNav = () => {
             </ListItem>
           ))}
         </List>
-        <Divider />
       </div>
-    );
-    return (
-            <div className={classes.root}>
+  );
+  return (
+    <div className={classes.root}>
       <CssBaseline />
+      <Hidden smUp implementation='css'>
       <AppBar position="fixed" className={classes.appBar}>
+        
         <Toolbar>
           <IconButton
             color="inherit"
@@ -93,11 +103,13 @@ const SideNav = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Daniel Martin
           </Typography>
         </Toolbar>
+        
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      </Hidden>
+      <nav className={classes.drawer}>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
@@ -128,7 +140,7 @@ const SideNav = () => {
           </Drawer>
         </Hidden>
       </nav>
-        </div>
-    )
+    </div>
+  )
 }
 export default SideNav;

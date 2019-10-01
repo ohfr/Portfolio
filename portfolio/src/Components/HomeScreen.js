@@ -1,36 +1,36 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles'; 
-// import ArrowForward from '@material-ui/icons/ArrowForward';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import Card from '@material-ui/core/Card'
+
+import { TweenMax, Power4, Power3 } from 'gsap';
 
 const useStyles = makeStyles({
     button: {
         color: 'white',
-        background: 'rgba(0,0,0, .2)',
+        background: 'rgba(60, 50 , 140)',
         '&:hover': {
-            // fontSize: '1rem',
-            background: 'rgba(255, 255, 255, 0.1)'
+            color: 'rgba(60, 50, 140)',
+            background: 'rgba(211,211,211)'
         }
     },
     highlight: {
-        color: 'rgba(60, 30 , 140, .6)'
+        color: 'rgba(60, 50 , 140)'
     },
     para: {
         fontSize: '1.5rem',
     },
     wrapper: {
-        // background: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(${require("../Assets/keyboard.jpg")}) no-repeat center center fixed`,
-        color: 'white',
         display: 'flex',
         flexFlow: 'column wrap',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100vw',
         height: '100vh',
-        position: 'absolute'
+        position: 'absolute',
+        background: 'black'
 
     },
     firstWrap: {
@@ -48,9 +48,6 @@ const useStyles = makeStyles({
         backgroundSize: 'cover',
     },
     middleWrapper: {
-        width: '35vw',
-        height: '40vh',
-        background: 'black',
         position: 'relative',
 
     },
@@ -63,26 +60,61 @@ const useStyles = makeStyles({
         justifyContent: 'center',
 
 
+    },
+    card: {
+        width: '45vw',
+        color: 'white',
+        background: 'rgba(20,20,20)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexFlow: 'column wrap',
+
+    },
+    car: {
+        color: 'rgb(0,255,255)'
+    },
+    soft: {
+        color: 'rgb(124,252,0)'
     }
 })
 
 const HomeScreen = () => {
     const classes = useStyles();
+
+    let card = useRef(null);
+    let background1 = useRef(null);
+    let background2 = useRef(null);
+
+    useEffect(() => {
+        TweenMax.from(background1, .9, {opacity: 0, x: -200, ease: Power3.easeInOut})
+        TweenMax.from(background2, .9, {opacity: 0, x: 200, ease: Power3.easeInOut, delay: .4})
+        TweenMax.from(
+            card,
+            1.0,
+            {
+                opacity: 0,
+                y: -200,
+                ease: Power3.easeInOut,
+                delay: .8
+            }
+        )
+    }, [])
     return (
     <div className={classes.main}>
         <div className={classes.wrapper}>
-            <div className={classes.firstWrap}>
+            <div className={classes.firstWrap} ref={el => background1 = el}>
 
             </div>
         
-        <div className={classes.secondWrap}></div>
+        <div className={classes.secondWrap} ref={el => background2 = el}></div>
         </div>
         <div className={classes.middleWrapper}>
-            <Card>
+            <Card className={classes.card} ref={el => {card = el}}>
                 <h1>Hi, I'm <span className={classes.highlight}>Daniel Martin</span></h1>
-                <p className={classes.para}>Software Developer, Car enthusiast.</p>
+                <p className={classes.para}><span className={classes.soft}>Software</span> Developer, <span className={classes.car}>Car </span>enthusiast.</p>
 
-                <h2>Let's change the world with a keyboard</h2>
+                <h2>I want to make things that change lives</h2>
                 <Button component={Link} to="/Home" className={classes.button}>Interested? <ArrowRightAlt /></Button>
             </Card>
         </div>
