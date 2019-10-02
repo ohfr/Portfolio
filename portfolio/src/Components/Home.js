@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import SideNav from './SideNav';
+import { Route } from 'react-router-dom';
+import About from './About';
 
 import { TweenMax, Power3 } from 'gsap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -38,6 +40,8 @@ const Home = () => {
             <Route path="/Projects" component={Projects} />
             <Route path="/Contact" component={Contact} />
             <Route path="/Resume" component={Resume} /> */}
+             <Route exact path="/" component={About} />
+
         </div>
     )
 }

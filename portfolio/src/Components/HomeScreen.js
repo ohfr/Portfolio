@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles'; 
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import Card from '@material-ui/core/Card'
 
-import { TweenMax, Power4, Power3 } from 'gsap';
+import { TweenMax, Power3 } from 'gsap';
 
 const useStyles = makeStyles({
     button: {
@@ -86,6 +85,8 @@ const HomeScreen = () => {
     let background1 = useRef(null);
     let background2 = useRef(null);
 
+
+
     useEffect(() => {
         TweenMax.from(background1, .9, {opacity: 0, x: -200, ease: Power3.easeInOut})
         TweenMax.from(background2, .9, {opacity: 0, x: 200, ease: Power3.easeInOut, delay: .4})
@@ -114,8 +115,8 @@ const HomeScreen = () => {
                 <h1>Hi, I'm <span className={classes.highlight}>Daniel Martin</span></h1>
                 <p className={classes.para}><span className={classes.soft}>Software</span> Developer, <span className={classes.car}>Car </span>enthusiast.</p>
 
-                <h2>I want to make things that change lives</h2>
-                <Button component={Link} to="/Home" className={classes.button}>Interested? <ArrowRightAlt /></Button>
+                <h2>Looking to make things that make a difference</h2>
+                <Button  className={classes.button}>Interested? <ArrowRightAlt /></Button>
             </Card>
         </div>
         </div>

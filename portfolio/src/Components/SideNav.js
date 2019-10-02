@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -54,6 +55,11 @@ const useStyles = makeStyles(theme => ({
     flexFlow: 'column wrap',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'black',
+
   }
 }));
 
@@ -77,11 +83,18 @@ const SideNav = () => {
       </div>
       <Divider />
         <List>
-          {['About', 'Projects', 'Contact', 'Resume'].map((text, index) => (
+          <Link className={classes.link} to="/">
+            <ListItem button>
+              <ListItemText primary="About" />
+            </ListItem>
+          </Link>
+          {['Projects', 'Contact', 'Resume'].map((text, index) => (
+            <Link className={classes.link} to={`/${text}`}>
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText primary={text} />
             </ListItem>
+            </Link>
           ))}
         </List>
       </div>
