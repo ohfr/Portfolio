@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'; 
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import Card from '@material-ui/core/Card'
+import { Link } from 'react-router-dom';
 
 import { TweenMax, Power3 } from 'gsap';
 
@@ -29,7 +30,8 @@ const useStyles = makeStyles({
         width: '100vw',
         height: '100vh',
         position: 'absolute',
-        background: 'black'
+        background: 'black',
+        overflow: 'hidden',
 
     },
     firstWrap: {
@@ -48,6 +50,7 @@ const useStyles = makeStyles({
     },
     middleWrapper: {
         position: 'relative',
+
 
     },
     main: {
@@ -85,11 +88,13 @@ const HomeScreen = () => {
     let background1 = useRef(null);
     let background2 = useRef(null);
 
+    const scroller = () => {
+        window.scrollTo(0, 1000);
+    }
+
 
 
     useEffect(() => {
-        TweenMax.from(background1, .9, {opacity: 0, x: -200, ease: Power3.easeInOut})
-        TweenMax.from(background2, .9, {opacity: 0, x: 200, ease: Power3.easeInOut, delay: .4})
         TweenMax.from(
             card,
             1.0,
@@ -102,24 +107,17 @@ const HomeScreen = () => {
         )
     }, [])
     return (
-    <div className={classes.main}>
-        <div className={classes.wrapper}>
-            <div className={classes.firstWrap} ref={el => background1 = el}>
 
-            </div>
-        
-        <div className={classes.secondWrap} ref={el => background2 = el}></div>
-        </div>
         <div className={classes.middleWrapper}>
             <Card className={classes.card} ref={el => {card = el}}>
                 <h1>Hi, I'm <span className={classes.highlight}>Daniel Martin</span></h1>
                 <p className={classes.para}><span className={classes.soft}>Software</span> Developer, <span className={classes.car}>Car </span>enthusiast.</p>
 
                 <h2>Looking to make things that make a difference</h2>
-                <Button  className={classes.button}>Interested? <ArrowRightAlt /></Button>
+                <Button component={Link} to="/About" className={classes.button}>Interested? <ArrowRightAlt /></Button>
             </Card>
         </div>
-        </div>
+        
     )
 }
 

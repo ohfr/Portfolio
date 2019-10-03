@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         background: 'white',
         width: '100vw',
         height: '100vh',
+        overflow: 'hidden',
     }
 })
 
@@ -19,6 +20,7 @@ const useStyles = makeStyles({
 const Home = () => {
     const classes = useStyles();
     let intro = useRef(null);
+
 
     useEffect(() => {
         TweenMax.from(
