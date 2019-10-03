@@ -56,7 +56,7 @@ const useStyles = makeStyles({
 
     },
     card: {
-        width: '100%',
+        width: '45vw',
         color: 'white',
         background: 'rgba(20,20,20)',
         display: 'flex',
