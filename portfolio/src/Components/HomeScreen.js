@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     button: {
         color: 'white',
         background: 'rgba(60, 50 , 140)',
+        marginBottom: '20px',
         '&:hover': {
             color: 'rgba(60, 50, 140)',
             background: 'rgba(211,211,211)'
@@ -34,37 +35,13 @@ const useStyles = makeStyles({
         overflow: 'hidden',
 
     },
-    firstWrap: {
-        width: '50%',
-        height: '100vh',
-        background: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)), url(${"https://images.unsplash.com/photo-1558459654-c430be5b0a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}) no-repeat center center fixed`,
-        backgroundSize: 'cover',
-        
-
-    },
-    secondWrap: {
-        width: '50%',
-        height: '100vh',
-        background: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(${"https://images.unsplash.com/photo-1517994112540-009c47ea476b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1981&q=80"}) no-repeat center center fixed`,
-        backgroundSize: 'cover',
-    },
     middleWrapper: {
         position: 'relative',
 
 
     },
-    main: {
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexFlow: 'column wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-
-
-    },
     card: {
-        width: '45vw',
+        width: '40vw',
         color: 'white',
         background: 'rgba(20,20,20)',
         display: 'flex',
@@ -74,7 +51,7 @@ const useStyles = makeStyles({
 
     },
     car: {
-        color: 'rgb(0,255,255)'
+        color: 'rgb(200, 0, 0)'
     },
     soft: {
         color: 'rgb(124,252,0)'
@@ -85,13 +62,6 @@ const HomeScreen = () => {
     const classes = useStyles();
 
     let card = useRef(null);
-    let background1 = useRef(null);
-    let background2 = useRef(null);
-
-    const scroller = () => {
-        window.scrollTo(0, 1000);
-    }
-
 
 
     useEffect(() => {

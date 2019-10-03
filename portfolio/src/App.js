@@ -2,9 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import './App.css';
 import { Route }  from 'react-router-dom';  
 import HomeScreen from './Components/HomeScreen';
-import Home from './Components/Home';
 import About from './Components/About';
-
+import Skills from './Components/Skills';
 import { TweenMax, Power3 } from 'gsap';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -64,6 +63,7 @@ function App() {
       <div className={classes.middleWrapper}>
         <Route exact path="/" component={HomeScreen}  />
         <Route path ="/About" component={About} />
+        <Route path="/Skills" component={Skills} />
       </div>
       {/* <Home /> */}
     </div>
