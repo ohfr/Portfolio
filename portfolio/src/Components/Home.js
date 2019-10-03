@@ -37,13 +37,12 @@ const Home = () => {
     }, [])
     return (
         <div className={classes.wrapper} ref={el => intro = el}>
-            <SideNav />
+            {/* <SideNav /> */}
             {/* <Route path="/About" component={About} />
             <Route path="/Projects" component={Projects} />
             <Route path="/Contact" component={Contact} />
             <Route path="/Resume" component={Resume} /> */}
-             <Route exact path="/" component={About} />
-
+            
         </div>
     )
 }

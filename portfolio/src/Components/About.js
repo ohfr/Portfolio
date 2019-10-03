@@ -22,7 +22,7 @@ const useStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexFlow: 'column wrap',
+        flexFlow: 'row wrap',
     },
     middleWrapper: {
         position: 'relative',
