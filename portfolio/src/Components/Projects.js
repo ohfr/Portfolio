@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     wrapper: {
-        background: 'black',
+        background: 'white',
         height: '150vh'
     }
 })

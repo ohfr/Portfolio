@@ -1,17 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { Route }  from 'react-router-dom';  
-import HomeScreen from './Components/HomeScreen';
 import Home from './Components/Home';
-import Skills from './Components/Skills';
 import SideNav from './Components/SideNav';
-import { TweenMax, Power3 } from 'gsap';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   app: {
-    
+    fontFamily: 'Roboto, sans-serif'
   },
   upperNav: {
     background: '#F2F2F2',

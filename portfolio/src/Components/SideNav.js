@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import clsx from 'clsx';
@@ -20,6 +20,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { TweenMax } from 'gsap';
 
 // const drawerWidth = 240;
 
@@ -207,33 +208,53 @@ const useStyles = makeStyles({
 
 })
 
+
 const SideNav = () => {
   const classes=useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  let menuIcon;
 
+const [width, setWidth] = useState(window.innerWidth);
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
+    TweenMax.from(
+      menuIcon, .5, { rotation: 90, repeat: 0, yoyo: true}
+    )
   };
+  
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   const handleClose = () => {
     setAnchorEl(null);
+    // TweenMax.to(menuIcon, .5, { rotation: 90, yoyo: true})
   };
   
-  return (
-    <div className={classes.menu}>
-      {/* <MenuIcon onClick={handleClick} />
-      <Button>Helloooo</Button>
+  if (width < 1000) {
+    return (
+      <div className={classes.menu}>
+      <MenuIcon onClick={handleClick}  fontSize="large" ref={el => menuIcon = el} />
        <Menu
-        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu> */}
+        <NavLink activeStyle={{color: 'blue'}} to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
+        <NavLink activeStyle={{color: 'blue'}} to="/Contact" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></NavLink>
+        <NavLink activeStyle={{color: 'blue'}} to="/ResumePage" className={classes.link}><MenuItem onClick={handleClose}>Resume</MenuItem></NavLink>
+
+      </Menu>
+      </div>
+    )
+  } else {
+  
+  return (
+    <div className={classes.menu}>
       <nav className={classes.nav}>
         <div>
           <h1>Daniel Martin</h1>
@@ -246,5 +267,6 @@ const SideNav = () => {
       </nav>
     </div>
   )
+    }
 }
 export default SideNav;
