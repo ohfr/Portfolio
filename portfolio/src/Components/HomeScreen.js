@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     },
     firstWrap: {
         width: '50%',
-        height: '100vh',
+        height: '100%',
         background: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)), url(${"https://images.unsplash.com/photo-1558459654-c430be5b0a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}) no-repeat center center fixed`,
         backgroundSize: 'cover',
         
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     },
     secondWrap: {
         width: '50%',
-        height: '100vh',
+        height: '100%',
         background: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(${"https://images.unsplash.com/photo-1517994112540-009c47ea476b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1981&q=80"}) no-repeat center center fixed`,
         backgroundSize: 'cover',
       },
@@ -56,7 +56,7 @@ const useStyles = makeStyles({
 
     },
     card: {
-        width: '45vw',
+        width: '95%',
         color: 'white',
         background: 'rgba(20,20,20)',
         display: 'flex',
@@ -64,6 +64,8 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         flexFlow: 'column wrap',
         margin: '20px',
+        textAlign: 'center',
+        
 
     },
     car: {
@@ -74,7 +76,7 @@ const useStyles = makeStyles({
     },
     main: {
         width: '100vw',
-        height: '100vh',
+        height: '50vh',
         display: 'flex',
         flexFlow: 'column wrap',
         alignItems: 'center',
@@ -82,6 +84,10 @@ const useStyles = makeStyles({
 
 
     },
+    header: {
+        textAlign: 'center',
+
+    }
 })
 
 const HomeScreen = () => {
@@ -120,7 +126,7 @@ const HomeScreen = () => {
             <Card className={classes.card} ref={el => {card = el}}>
                 <h1>Hi, I'm <span className={classes.highlight}>Daniel Martin</span></h1>
                 <p className={classes.para}><span className={classes.soft}>Software</span> Developer, <span className={classes.car}>Car </span>enthusiast.</p>
-                <h2>Looking to make things that make a difference</h2>
+                <h2 className={classes.header}>I build things with a keyboard</h2>
                 <Button component={Link} to="/Home" className={classes.button}>Interested? <ArrowRightAlt /></Button>
             </Card>
         </div>

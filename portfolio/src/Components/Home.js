@@ -2,16 +2,19 @@ import React, { useRef, useEffect } from 'react';
 import SideNav from './SideNav';
 import { Route } from 'react-router-dom';
 import About from './About';
+import Projects from './Projects';
 
 import { TweenMax, Power3 } from 'gsap';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     wrapper: {
-        background: 'white',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
+        height: '50vh',
+        marginTop: '200px',
+        display: 'flex',
+        flexFlow: 'column wrap',
+        alignItems: 'center',
+
     }
 })
 
@@ -36,13 +39,11 @@ const Home = () => {
 
     }, [])
     return (
-        <div className={classes.wrapper} ref={el => intro = el}>
-            {/* <SideNav /> */}
-            {/* <Route path="/About" component={About} />
-            <Route path="/Projects" component={Projects} />
-            <Route path="/Contact" component={Contact} />
-            <Route path="/Resume" component={Resume} /> */}
-            
+        <div>
+            <div className={classes.wrapper} ref={el => intro = el}>
+                <h2>Software Developer, Car enthusiast, Keyboard addict</h2>
+            </div>
+            <Projects />
         </div>
     )
 }
