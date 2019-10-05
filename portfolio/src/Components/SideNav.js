@@ -1,175 +1,14 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import clsx from 'clsx';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { TweenMax } from 'gsap';
 
-// const drawerWidth = 240;
-
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     display: 'flex',
-//   },
-//   appBar: {
-//     transition: theme.transitions.create(['margin', 'width'], {
-//       easing: theme.transitions.easing.sharp,
-//       duration: theme.transitions.duration.leavingScreen,
-//     }),
-//   },
-//   appBarShift: {
-//     width: `calc(100% - ${drawerWidth}px)`,
-//     marginLeft: drawerWidth,
-//     transition: theme.transitions.create(['margin', 'width'], {
-//       easing: theme.transitions.easing.easeOut,
-//       duration: theme.transitions.duration.enteringScreen,
-//     }),
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   hide: {
-//     display: 'none',
-//   },
-//   drawer: {
-//     width: drawerWidth,
-//     flexShrink: 0,
-//   },
-//   drawerPaper: {
-//     width: drawerWidth,
-//   },
-//   drawerHeader: {
-//     display: 'flex',
-//     alignItems: 'center',
-//     padding: theme.spacing(0, 1),
-//     ...theme.mixins.toolbar,
-//     justifyContent: 'flex-end',
-//   },
-//   content: {
-//     flexGrow: 1,
-//     padding: theme.spacing(3),
-//     transition: theme.transitions.create('margin', {
-//       easing: theme.transitions.easing.sharp,
-//       duration: theme.transitions.duration.leavingScreen,
-//     }),
-//     marginLeft: -drawerWidth,
-//   },
-//   contentShift: {
-//     transition: theme.transitions.create('margin', {
-//       easing: theme.transitions.easing.easeOut,
-//       duration: theme.transitions.duration.enteringScreen,
-//     }),
-//     marginLeft: 0,
-//   },
-// }));
-
-
-
-// const SideNav = () => {
-//   const classes = useStyles();
-  
-//   const theme = useTheme();
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleDrawerOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleDrawerClose = () => {
-//     setOpen(false);
-//   };
-  
-//   // const drawer = (
-//   //   <div>
-//   //     <div className={classes.header}>
-//   //       <h1>Daniel Martin</h1>
-//   //       <p>Software Engineer</p>
-//   //     </div>
-//   //     <Divider />
-//   //       <List>
-//   //         <Link className={classes.link} to="/">
-//   //           <ListItem button>
-//   //             <ListItemText primary="About" />
-//   //           </ListItem>
-//   //         </Link>
-//   //         {['Projects', 'Contact', 'Resume'].map((text, index) => (
-//   //           <Link className={classes.link} to={`/${text}`}>
-//   //           <ListItem button key={text}>
-//   //             {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-//   //             <ListItemText primary={text} />
-//   //           </ListItem>
-//   //           </Link>
-//   //         ))}
-//   //       </List>
-//   //     </div>
-//   // );
-//   return (
-//     <div className={classes.root}>
-//            <CssBaseline />
-//       <AppBar
-//         position="fixed"
-//         className={clsx(classes.appBar, {
-//           [classes.appBarShift]: open,
-//         })}
-//       >
-//         <Toolbar>
-//           <IconButton
-//             color="inherit"
-//             aria-label="open drawer"
-//             onClick={handleDrawerOpen}
-//             edge="start"
-//             className={clsx(classes.menuButton, open && classes.hide)}
-//           >
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" noWrap>
-//             Persistent drawer
-//           </Typography>
-//         </Toolbar>
-//       </AppBar>
-//       <Drawer
-//         className={classes.drawer}
-//         variant="persistent"
-//         anchor="left"
-//         open={open}
-//         classes={{
-//           paper: classes.drawerPaper,
-//         }}
-//       >
-//         <div className={classes.drawerHeader}>
-//           <IconButton onClick={handleDrawerClose}>
-//             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-//           </IconButton>
-//         </div>
-//         <Divider />
-//         <List>
-//           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-//             <ListItem button key={text}>
-//               <ListItemText primary={text} />
-//             </ListItem>
-//           ))}
-//         </List>
-//       </Drawer>
-//     </div>
-//   )
-// }
 
 const useStyles = makeStyles({
   nav: {
@@ -191,10 +30,10 @@ const useStyles = makeStyles({
     color: 'black',
     marginRight: '30px',
     '&:hover': {
-      color: 'blue'
+      color: '#0069e2'
     },
     active: {
-      color: 'blue',
+      color: '#0069e2',
     }
   },
   menu: {
@@ -203,7 +42,17 @@ const useStyles = makeStyles({
     width: '100%',
     overflow: 'hidden',
     zIndex: '1'
-  }
+  },
+  mobile: {
+    position: 'fixed',
+    width: '100%',
+    zIndex: '1',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
+    background: '#F2F2F2',
+    justifyContent: 'space-around',
+  },
 
 
 })
@@ -218,7 +67,7 @@ const [width, setWidth] = useState(window.innerWidth);
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
     TweenMax.from(
-      menuIcon, .5, { rotation: 90, repeat: 0, yoyo: true}
+      menuIcon, .5, { rotation: -90, repeat: 0, yoyo: true}
     )
   };
   
@@ -231,12 +80,15 @@ const [width, setWidth] = useState(window.innerWidth);
 
   const handleClose = () => {
     setAnchorEl(null);
-    // TweenMax.to(menuIcon, .5, { rotation: 90, yoyo: true})
+    TweenMax.from(
+      menuIcon, .5, { rotation: 90, repeat: 0, yoyo: true}
+    )
   };
   
   if (width < 1000) {
     return (
-      <div className={classes.menu}>
+      <div className={classes.mobile}>
+        <h1>Daniel Martin</h1>
       <MenuIcon onClick={handleClick}  fontSize="large" ref={el => menuIcon = el} />
        <Menu
         anchorEl={anchorEl}
@@ -244,9 +96,9 @@ const [width, setWidth] = useState(window.innerWidth);
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <NavLink activeStyle={{color: 'blue'}} to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
-        <NavLink activeStyle={{color: 'blue'}} to="/Contact" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></NavLink>
-        <NavLink activeStyle={{color: 'blue'}} to="/ResumePage" className={classes.link}><MenuItem onClick={handleClose}>Resume</MenuItem></NavLink>
+        <NavLink activeStyle={{color: '#0069e2'}} to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
+        <NavLink activeStyle={{color: '#0069e2'}} to="/Contact" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></NavLink>
+        <a className={classes.link} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><MenuItem onClick={handleClose}>Resume</MenuItem></a>
 
       </Menu>
       </div>
@@ -260,9 +112,9 @@ const [width, setWidth] = useState(window.innerWidth);
           <h1>Daniel Martin</h1>
         </div>
         <div className={classes.links}>
-          <NavLink activeStyle={{color: 'blue'}} className={classes.link} exact to="/">Home</NavLink>
-          <NavLink activeStyle={{color: 'blue'}} className={classes.link} to="/Contact">Contact</NavLink>
-          <NavLink activeStyle={{color: 'blue'}} className={classes.link} to="/Home">Resume</NavLink>
+          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} exact to="/">Home</NavLink>
+          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/Contact">Contact</NavLink>
+          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/Home">Resume</NavLink>
         </div>
       </nav>
     </div>

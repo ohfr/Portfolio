@@ -16,6 +16,7 @@ const useStyles = makeStyles({
         display: 'flex',
         flexFlow: 'column wrap',
         alignItems: 'center',
+        textAlign: 'center',
 
     },
     aTag: {
@@ -56,7 +57,7 @@ const Home = () => {
         <div>
             <div className={classes.wrapper} ref={el => intro = el}>
                 <h2>Software Developer, Car enthusiast, Keyboard addict</h2>
-                <a className={classes.aTag} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit"><Button className={classes.button}>Get in Contact</Button></a>
+                <a className={classes.aTag} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><Button className={classes.button}>Get in Contact</Button></a>
             </div>
             <Projects />
         </div>
