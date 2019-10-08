@@ -59,6 +59,15 @@ const useStyles = makeStyles({
     },
     h2: {
         borderBottom: '2px solid black',
+    },
+    lastSection: {
+        display: 'flex',
+        flexFlow: 'row wrap',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        background: '#F2F2F2',
+        padding: '20px 0 20px 0',
+        height: '70vh',
     }
 })
 const Projects = () => {
@@ -94,7 +103,7 @@ const Projects = () => {
                     </div>
                 </div>
             </section>
-            <section className={classes.sections}>
+            <section className={classes.lastSection}>
                 <div className={width > 1000 ? classes.about :  width > 800 ? classes.mobileAbout : classes.fullAbout}>
                     <div className={classes.projectName}>
                         <h2 className={classes.h2}>SleepTracker</h2>

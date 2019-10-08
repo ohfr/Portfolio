@@ -3,6 +3,7 @@ import './App.css';
 import { Route }  from 'react-router-dom';  
 import Home from './Components/Home';
 import SideNav from './Components/SideNav';
+import Footer from './Components/Footer';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,6 +30,7 @@ function App() {
       <Route exact path="/" component={Home} />
       {/* <Route path="/Home" component={Home} /> */}
       </div>
+      <Footer />
     </div>
   );
 }
