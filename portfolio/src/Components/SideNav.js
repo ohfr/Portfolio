@@ -97,6 +97,7 @@ const [width, setWidth] = useState(window.innerWidth);
         onClose={handleClose}
       >
         <NavLink activeStyle={{color: '#0069e2'}} to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
+        <NavLink activeStyle={{color: '#0069e2'}} to="/About" className={classes.link}><MenuItem onClick={handleClose}>About</MenuItem></NavLink>
         <NavLink activeStyle={{color: '#0069e2'}} to="/Contact" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></NavLink>
         <a className={classes.link} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><MenuItem onClick={handleClose}>Resume</MenuItem></a>
 
@@ -113,6 +114,7 @@ const [width, setWidth] = useState(window.innerWidth);
         </div>
         <div className={classes.links}>
           <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} exact to="/">Home</NavLink>
+          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/About">About</NavLink>
           <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/Contact">Contact</NavLink>
           <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/Home">Resume</NavLink>
         </div>

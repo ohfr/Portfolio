@@ -16,11 +16,12 @@ const useStyles = makeStyles({
         display: 'flex',
         flexFlow: 'column wrap',
         alignItems: 'center',
-        textAlign: 'center',
+        // textAlign: 'center',
 
     },
     aTag: {
         textDecoration: 'none',
+        color: '#0069e2'
     },
     button: {
         background: 'black',
@@ -29,6 +30,24 @@ const useStyles = makeStyles({
             background: 'white',
             color: 'black'
         }
+    },
+    // inside: {
+    //     width: '57%',
+    //     display: 'flex',
+    //     flexFlow: 'column wrap',
+    //     alignItems: 'flex-start',
+
+    // },
+    // middle: {
+    //     width: '80%',
+    //     display: 'flex',
+    //     flexFlow: 'column wrap',
+    //     alignItems: 'flex-start',
+    //     justifyContent: 'space-around',
+        
+    // },
+    span: {
+        color: '#0069e2'
     }
 })
 
@@ -56,8 +75,13 @@ const Home = () => {
     return (
         <div>
             <div className={classes.wrapper} ref={el => intro = el}>
-                <h2>Software Developer, Car enthusiast, Keyboard addict</h2>
-                <a className={classes.aTag} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><Button className={classes.button}>Get in Contact</Button></a>
+                <div className={classes.inside}>
+                    <div className={classes.middle}>
+                    <h2>Using <span className={classes.span}>code</span> to build amazing <span className={classes.span}>apps</span>, all while having <span className={classes.span}>fun</span>!</h2>
+                    <p>Currently studing Computer Science/Software Development at <a className={classes.aTag} target="_blank" href="https://lambdaschool.com">Lambda School</a></p>
+                    <a className={classes.aTag} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><Button className={classes.button}>Get in Contact</Button></a>
+                    </div>
+                </div>
             </div>
             <Projects />
         </div>
