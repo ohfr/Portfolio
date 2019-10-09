@@ -90,12 +90,14 @@ const Projects = () => {
                     </div>
                 </div>
                 <div className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg}>
-                <a href="https://festive-banach-64ae41.netlify.com/" target="_blank"><img style={{width: '100%'}} src={require('../Assets/sleeptracker.PNG')} /></a>
+                    <a href="https://festive-banach-64ae41.netlify.com/" target="_blank"><img style={{width: '100%'}} src={require('../Assets/sleeptracker.PNG')} /></a>
                 </div>
 
             </section>
             <section className={classes.middleSection}>
-                <img className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg} src={require('../Assets/brewbase.PNG')} />  
+                <div className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg}>
+                    <a href="https://kind-noether-23ba5e.netlify.com" target="_blank"><img style={{width: '100%'}}src={require('../Assets/brewbase.PNG')} /></a> 
+                </div>
                 <div className={width > 1000 ? classes.about :  width > 800 ? classes.mobileAbout : classes.fullAbout}>
                     <div className={classes.projectName}>
                         <h2 className={classes.h2}>BrewBase</h2>
@@ -106,8 +108,8 @@ const Projects = () => {
             <section className={classes.lastSection}>
                 <div className={width > 1000 ? classes.about :  width > 800 ? classes.mobileAbout : classes.fullAbout}>
                     <div className={classes.projectName}>
-                        <h2 className={classes.h2}>SleepTracker</h2>
-                        <p>An app to track your sleeping habits and how well you feel when you wake up, built with: React, React-Router, Axios, Auth, and Material-UI </p>
+                        <h2 className={classes.h2}>Space Invaders Clone</h2>
+                        <p>A fun clone of the classic arcade game Space Invaders, uses pure JavaScript on an HTML canvas using a OOP paradigm</p>
                     </div>
                 </div>
                 <img className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg} src={require('../Assets/sleeptracker.PNG')} />
