@@ -13,9 +13,16 @@ const useStyles = makeStyles({
     wrapper: {
         display: 'flex',
         flexFlow: 'column wrap',
-        
     },
+    header: {
+        background: 'white',
+        height: '40vh',
+    },
+    moreAbout: {
+        background: '#f7f9fa',
+        height: '40vh',
 
+    }
 
 
 })
@@ -26,23 +33,20 @@ const About = () => {
     let card = useRef(null);
 
     useEffect(() => {
-        TweenMax.from(
-            card,
-            1.0,
-            {
-                opacity: 0,
-                y: 50,
-                ease: Power3.easeInOut
-            }
-        )
+
     }, [])
 
 
     return (
 
         <div className={classes.wrapper}>
-            <h2>Software Developer, Car enthusiast, keyboard addict</h2>
-            <p>I'm a software developer with a passion for writing maintainable, clean, effecient code. I spend a lot of my spare time honing my skills, as well as learning new ones. I also spend my time working on cars, whether that be breaking or fixing them. </p>
+            <div className={classes.header}>
+                <h2>Software Developer, Car enthusiast, keyboard addict</h2>
+                <p>I'm a software developer with a passion for writing maintainable, clean, effecient code. I spend a lot of my spare time honing my skills, as well as learning new ones. I also spend my time working on cars, whether that be breaking or fixing them. </p>
+            </div>
+            <div className={classes.moreAbout}>
+
+            </div>
         </div>
     )
 }

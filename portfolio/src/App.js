@@ -4,6 +4,7 @@ import { Route }  from 'react-router-dom';
 import Home from './Components/Home';
 import SideNav from './Components/SideNav';
 import Footer from './Components/Footer';
+import About from './Components/About';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,6 +29,7 @@ function App() {
       <div className={classes.upperNav}>
       <SideNav />
       <Route exact path="/" component={Home} />
+      <Route path="/About" component={About} />
       {/* <Route path="/Home" component={Home} /> */}
       </div>
       <Footer />

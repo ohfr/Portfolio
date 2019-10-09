@@ -13,6 +13,8 @@ const useStyles = makeStyles({
         flexFlow: 'row wrap',
         alignItems: 'center',
         justifyContent: 'space-evenly',
+        flexShrink: '0',
+        
     },
     aTag: {
         color: 'white',
