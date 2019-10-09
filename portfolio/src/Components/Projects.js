@@ -68,6 +68,9 @@ const useStyles = makeStyles({
         background: '#F2F2F2',
         padding: '20px 0 20px 0',
         height: '70vh',
+    },
+    aTag: {
+        color: '#0069e2'
     }
 })
 const Projects = () => {
@@ -87,6 +90,7 @@ const Projects = () => {
                     <div className={classes.projectName}>
                         <h2 className={classes.h2}>SleepTracker</h2>
                         <p>An app to track your sleeping habits and how well you feel when you wake up, built with: React, React-Router, Axios, Auth, and Material-UI </p>
+                        <a className={classes.aTag} href="https://github.com/sleeptracker/sleeptracker_fe/tree/master/sleeptracker" target="_blank">Code</a>
                     </div>
                 </div>
                 <div className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg}>
@@ -102,6 +106,7 @@ const Projects = () => {
                     <div className={classes.projectName}>
                         <h2 className={classes.h2}>BrewBase</h2>
                         <p>Find local breweries or search a city, built with React, React-Router, Material-UI, and Axios</p>
+                        <a className={classes.aTag}href="https://github.com/ohfr/BrewBase" target="_blank">Code</a>
                     </div>
                 </div>
             </section>
@@ -110,6 +115,7 @@ const Projects = () => {
                     <div className={classes.projectName}>
                         <h2 className={classes.h2}>Space Invaders Clone</h2>
                         <p>A fun clone of the classic arcade game Space Invaders, uses pure JavaScript on an HTML canvas using a OOP paradigm</p>
+                        <a className={classes.aTag} href="https://codepen.io/ohfr/pen/mYPoEO" target="_blank">Code</a>
                     </div>
                 </div>
                 <img className={width > 1000 ? classes.img : width > 800 ? classes.mobileImg : classes.hiddenImg} src={require('../Assets/sleeptracker.PNG')} />
