@@ -18,8 +18,9 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'space-evenly',
     background: '#F2F2F2',
-    height: '10vh',
+    height: '8vh',
     overflow: 'hidden',
+    zIndex: '99'
 
   },
   links: {
@@ -41,7 +42,7 @@ const useStyles = makeStyles({
     top: 0,
     width: '100%',
     overflow: 'hidden',
-    zIndex: '1'
+    zIndex: '99'
   },
   mobile: {
     position: 'fixed',
@@ -96,9 +97,9 @@ const [width, setWidth] = useState(window.innerWidth);
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <NavLink activeStyle={{color: '#0069e2'}} to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
-        <NavLink activeStyle={{color: '#0069e2'}} to="/About" className={classes.link}><MenuItem onClick={handleClose}>About</MenuItem></NavLink>
-        <NavLink activeStyle={{color: '#0069e2'}} to="/Contact" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></NavLink>
+        <NavLink activeStyle={{color: '#0069e2'}} exact to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
+        {/* <NavLink activeStyle={{color: '#0069e2'}} to="/About" className={classes.link}><MenuItem onClick={handleClose}>About</MenuItem></NavLink> */}
+        <a href="mailto:danielmartin1205@gmail.com" target="_blank" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></a>
         <a className={classes.link} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><MenuItem onClick={handleClose}>Resume</MenuItem></a>
 
       </Menu>
@@ -114,8 +115,8 @@ const [width, setWidth] = useState(window.innerWidth);
         </div>
         <div className={classes.links}>
           <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} exact to="/">Home</NavLink>
-          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/About">About</NavLink>
-          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/Contact">Contact</NavLink>
+          {/* <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/About">About</NavLink> */}
+          <a href="mailto:danielmartin1205@gmail.com" target="_blank" className={classes.link} to="/Contact">Contact</a>
           <a className={classes.link} target="_blank" href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing">Resume</a>
 
         </div>

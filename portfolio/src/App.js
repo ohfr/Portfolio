@@ -12,13 +12,6 @@ const useStyles = makeStyles({
   app: {
     fontFamily: 'Roboto, sans-serif'
   },
-  upperNav: {
-    background: '#F2F2F2',
-    display: 'flex',
-    flexFlow: 'column wrap', 
-  }
-
-
 })
 
 
@@ -26,12 +19,11 @@ function App() {
   const classes = useStyles();
   return (
     <div className={classes.app}>
-      <div className={classes.upperNav}>
-      <SideNav />
-      <Route exact path="/" component={Home} />
-      <Route path="/About" component={About} />
-      {/* <Route path="/Home" component={Home} /> */}
+      <div className="upperNav">
+        <SideNav />
+        <Route exact path="/" component={Home} />
       </div>
+      {/* <Route exact path="/About" component={About} /> */}
       <Footer />
     </div>
   );

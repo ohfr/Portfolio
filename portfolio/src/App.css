@@ -1,0 +1,5 @@
+.upperNav {
+    background: linear-gradient(rgba(49,56,67,.9), rgba(49,56,67,.7)), url("./Assets/blueRidge.jpg");
+    display: flex;
+    flex-flow: column wrap;
+}

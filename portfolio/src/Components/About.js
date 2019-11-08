@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     wrapper: {
         display: 'flex',
         flexFlow: 'column wrap',
+        marginTop: '100px',
     },
     header: {
         background: 'white',
@@ -40,10 +41,12 @@ const About = () => {
     return (
 
         <div className={classes.wrapper}>
-            <div className={classes.header}>
-                <h2>Software Developer, Car enthusiast, keyboard addict</h2>
-                <p>I'm a software developer with a passion for writing maintainable, clean, effecient code. I spend a lot of my spare time honing my skills, as well as learning new ones. I also spend my time working on cars, whether that be breaking or fixing them. </p>
-            </div>
+            <section className={classes.header}>
+                <div className={classes.info}>
+                    <h2>Software Engineer, Car enthusiast, keyboard addict</h2>
+                    <p>I'm a software developer with a passion for writing maintainable, clean, effecient code. I spend a lot of my spare time honing my skills, as well as learning new ones. I also spend my time working on cars, whether that be breaking or fixing them. </p>
+                </div>
+            </section>
             <div className={classes.moreAbout}>
 
             </div>
