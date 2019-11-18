@@ -207,34 +207,42 @@ const useStyles = makeStyles({
     },
     buttonOverylay: {
         zIndex: '3',
-        border: '2px solid #0069e2',
-        borderRadius: '5px',
+        // border: '2px solid #0069e2',
+        borderRadius: '25px',
         position: 'absolute',
-        padding: '3px 22px',
+        padding: '10px 40px',
         fontSize: '1.6rem',
         color: 'white',
         top: '45%',
         left: '25%',
+        background: 'linear-gradient(261.5deg, #0066DB -98.62%, #0066DB -64.07%, rgba(27, 110, 218, 0.868826) 33.31%, rgba(50, 117, 217, 0.762918) 102.42%)',
         textDecoration: 'none',
         transition: 'transform 1s',
         '&:hover': {
             transform: 'translate(10%, -25%)',
+            background: 'linear-gradient(268.02deg, #1E5CA3 0.88%, rgba(27, 110, 218, 0.868826) 104.8%, rgba(50, 117, 217, 0.762918) 105.11%)',
+            color: 'white',
         }
     },
     buttonOverylay2: {
         zIndex: '3',
-        border: '2px solid #0069e2',
-        borderRadius: '5px',
+        // border: '2px solid #0069e2',
+        borderRadius: '25px',
         position: 'absolute',
-        padding: '3px 22px',
+        padding: '10px 40px',
         fontSize: '1.6rem',
         color: 'white',
         top: '45%',
         right: '25%',
         textDecoration: 'none',
+        background: 'linear-gradient(261.5deg, #0066DB -98.62%, #0066DB -64.07%, rgba(27, 110, 218, 0.868826) 33.31%, rgba(50, 117, 217, 0.762918) 102.42%)',
+
         transition: 'transform 1s',
         '&:hover': {
             transform: 'translate(10%, -25%)',
+            background: 'linear-gradient(268.02deg, #1E5CA3 0.88%, rgba(27, 110, 218, 0.868826) 104.8%, rgba(50, 117, 217, 0.762918) 105.11%)',
+            color: 'white',
+
         },
 
     },

@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     color: 'black',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    background: '#F2F2F2',
+    backgroundColor: '#7510f7',
     height: '8vh',
     overflow: 'hidden',
     zIndex: '99'
@@ -31,10 +31,10 @@ const useStyles = makeStyles({
     color: 'black',
     marginRight: '30px',
     '&:hover': {
-      color: '#0069e2'
+      color: 'white'
     },
     active: {
-      color: '#0069e2',
+      color: '#7510F7',
     }
   },
   menu: {
@@ -54,7 +54,12 @@ const useStyles = makeStyles({
     background: '#F2F2F2',
     justifyContent: 'space-around',
   },
-
+  img: {
+    width: '15%',
+  },
+  mobileImg: {
+    width: '10%',
+  }
 
 })
 
@@ -89,7 +94,7 @@ const [width, setWidth] = useState(window.innerWidth);
   if (width < 1000) {
     return (
       <div className={classes.mobile}>
-        <h1>Daniel Martin</h1>
+          <img className={classes.mobileImg} src={require('../Assets/Component 8.png')} />
       <MenuIcon onClick={handleClick}  fontSize="large" ref={el => menuIcon = el} />
        <Menu
         anchorEl={anchorEl}
@@ -97,7 +102,7 @@ const [width, setWidth] = useState(window.innerWidth);
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <NavLink activeStyle={{color: '#0069e2'}} exact to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
+        <NavLink activeStyle={{color: '#7510F7'}} exact to="/"className={classes.link}><MenuItem onClick={handleClose}>Home</MenuItem></NavLink>
         {/* <NavLink activeStyle={{color: '#0069e2'}} to="/About" className={classes.link}><MenuItem onClick={handleClose}>About</MenuItem></NavLink> */}
         <a href="mailto:danielmartin1205@gmail.com" target="_blank" className={classes.link}><MenuItem onClick={handleClose}>Contact</MenuItem></a>
         <a className={classes.link} href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing"><MenuItem onClick={handleClose}>Resume</MenuItem></a>
@@ -111,10 +116,10 @@ const [width, setWidth] = useState(window.innerWidth);
     <div className={classes.menu}>
       <nav className={classes.nav}>
         <div>
-          <h1>Daniel Martin</h1>
+          <img className={classes.img} src={require('../Assets/Component 8.png')} />
         </div>
         <div className={classes.links}>
-          <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} exact to="/">Home</NavLink>
+          <NavLink activeStyle={{color: 'white'}} className={classes.link} exact to="/">Home</NavLink>
           {/* <NavLink activeStyle={{color: '#0069e2'}} className={classes.link} to="/About">About</NavLink> */}
           <a href="mailto:danielmartin1205@gmail.com" target="_blank" className={classes.link} to="/Contact">Contact</a>
           <a className={classes.link} target="_blank" href="https://docs.google.com/document/d/1qUfIOe7l0zUtmvlZt4e4P0Titj1E61VXMtQCq8gbNd4/edit?usp=sharing">Resume</a>
